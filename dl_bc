@@ -18,6 +18,8 @@ BC_TEMAPLTE="%{artist} - %{album}/%{track} - %{artist} - %{title}"
 
 source ~/.config/dl_bc/config
 
+mkdir -p ${BC_BASEDIR}
+
 while getopts q:h OPT
 do
     case $OPT in
