@@ -13,7 +13,8 @@ mark_finished(){
         sed -i -e "s|${1}|#${1}|g" ${2}
 }
 
-BC_OPTIONS='-d -o -e -r --template="%{artist} - %{album}/%{track} - %{artist} - %{title}"'
+BC_BASEDIR=`pwd`
+BC_TEMAPLTE="%{artist} - %{album}/%{track} - %{artist} - %{title}"
 
 source ~/.config/dl_bc/config
 
@@ -34,6 +35,6 @@ echo "reading from "${FILENAME_QUEUE}"..."
 
 for LINE in `cat ${FILENAME_QUEUE} | grep -v "^#"`
 do
-	bandcamp-dl ${BC_OPTIONS} "${LINE}" || continue
+	bandcamp-dl -d -o --base-dir=${BC_BASEDIR} --template=$BC_TEMAPLTE "${LINE}" || continue
 	mark_finished "${LINE}" "${FILENAME_QUEUE}"
 done

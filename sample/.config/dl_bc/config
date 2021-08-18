@@ -1,0 +1,3 @@
+FILENAME_QUEUE=~/hoge.txt
+BC_TEMAPLTE="%{artist} - %{album}/%{track} - %{artist} - %{title}"
+
