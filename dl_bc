@@ -1,5 +1,4 @@
 #!/bin/bash
-pip install -qqq -U bandcamp-downloader || exit 1
 export IFS=$'\n'
 CMDNAME=`basename $0`
 FILENAME_QUEUE="queue_bc.txt"
