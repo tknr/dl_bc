@@ -13,7 +13,7 @@ mark_finished(){
 }
 
 BC_BASEDIR=`pwd`
-BC_TEMPLATE="%{artist} - %{album} - %{date}/%{track} - %{artist} - %{title}"
+BC_TEMPLATE="%{label}/%{artist} - %{album} - %{date}/%{track} - %{artist} - %{title}"
 
 source ~/.config/dl_bc/config
 
