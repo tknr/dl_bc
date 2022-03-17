@@ -36,6 +36,6 @@ echo "reading from "${FILENAME_QUEUE}"..."
 
 for LINE in `cat ${FILENAME_QUEUE} | grep -v "^#"`
 do
-	yes | bandcamp-dl -d -o --base-dir=${BC_BASEDIR} --template=$BC_TEMPLATE "${LINE}" -r -g -e -k || continue
+	yes | bandcamp-dl -d -o -r -g -e -k --base-dir=${BC_BASEDIR} --template=$BC_TEMPLATE "${LINE}" || continue
 	mark_finished "${LINE}" "${FILENAME_QUEUE}"
 done
